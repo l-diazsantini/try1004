@@ -44,6 +44,11 @@ class _TestWidgetState extends State<TestWidget> {
           _model.dataaa = await actions.receiveData(
             widget!.devicee!,
           );
+          _model.dataa = valueOrDefault<String>(
+            _model.dataaa,
+            '-',
+          );
+          safeSetState(() {});
           _model.listt = await actions.receiveAndPlotData(
             _model.dataaa!,
           );
@@ -104,7 +109,7 @@ class _TestWidgetState extends State<TestWidget> {
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Montserrat',
-                  color: FlutterFlowTheme.of(context).primary,
+                  color: FlutterFlowTheme.of(context).tertiary,
                   fontSize: 22.0,
                   letterSpacing: 0.0,
                 ),
@@ -168,7 +173,7 @@ class _TestWidgetState extends State<TestWidget> {
                               ),
                               axisBounds: AxisBounds(
                                 minX: -0.0,
-                                minY: -10.0,
+                                minY: 0.0,
                                 maxX: 10.0,
                                 maxY: 10.0,
                               ),
