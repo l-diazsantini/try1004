@@ -149,7 +149,7 @@ class _TestWidgetState extends State<TestWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Container(
-                              width: 1000000.0,
+                              width: 1000.0,
                               height: 230.0,
                               child: FlutterFlowLineChart(
                                 data: [
@@ -175,7 +175,7 @@ class _TestWidgetState extends State<TestWidget> {
                                 axisBounds: AxisBounds(
                                   minX: -0.0,
                                   minY: -1.0,
-                                  maxX: 10000000000000000.0,
+                                  maxX: 500.0,
                                   maxY: 1.0,
                                 ),
                                 xAxisLabelInfo: AxisLabelInfo(
