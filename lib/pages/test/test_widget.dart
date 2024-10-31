@@ -141,113 +141,54 @@ class _TestWidgetState extends State<TestWidget> {
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
-                    child: Stack(
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Container(
-                            width: 385.0,
-                            height: 230.0,
-                            child: FlutterFlowLineChart(
-                              data: [
-                                FFLineChartData(
-                                  xData: FFAppState().xaxis,
-                                  yData: FFAppState().yaxis,
-                                  settings: LineChartBarData(
-                                    color: FlutterFlowTheme.of(context).success,
-                                    barWidth: 2.0,
-                                    isCurved: true,
-                                    dotData: FlDotData(show: false),
-                                    belowBarData: BarAreaData(
-                                      show: true,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Container(
+                              width: 1000000.0,
+                              height: 230.0,
+                              child: FlutterFlowLineChart(
+                                data: [
+                                  FFLineChartData(
+                                    xData: FFAppState().xaxis,
+                                    yData: FFAppState().yaxis,
+                                    settings: LineChartBarData(
                                       color:
-                                          FlutterFlowTheme.of(context).accent1,
+                                          FlutterFlowTheme.of(context).success,
+                                      barWidth: 2.0,
+                                      isCurved: true,
                                     ),
-                                  ),
-                                )
-                              ],
-                              chartStylingInfo: ChartStylingInfo(
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).primaryText,
-                                showGrid: true,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                borderWidth: 3.0,
-                              ),
-                              axisBounds: AxisBounds(
-                                minX: -0.0,
-                                minY: 0.0,
-                                maxX: 10.0,
-                                maxY: 10.0,
-                              ),
-                              xAxisLabelInfo: AxisLabelInfo(
-                                reservedSize: 32.0,
-                              ),
-                              yAxisLabelInfo: AxisLabelInfo(
-                                reservedSize: 40.0,
+                                  )
+                                ],
+                                chartStylingInfo: ChartStylingInfo(
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  showGrid: true,
+                                  borderColor: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  borderWidth: 3.0,
+                                ),
+                                axisBounds: AxisBounds(
+                                  minX: -0.0,
+                                  minY: -1.0,
+                                  maxX: 10000000000000000.0,
+                                  maxY: 1.0,
+                                ),
+                                xAxisLabelInfo: AxisLabelInfo(
+                                  reservedSize: 32.0,
+                                ),
+                                yAxisLabelInfo: AxisLabelInfo(
+                                  reservedSize: 40.0,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(0.0, -0.94),
-                          child: ListView(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.vertical,
-                            children: [
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.textT.first.toString(),
-                                  '---',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  _model.textT.last.toString(),
-                                  '---',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  FFAppState().xaxis.first.toString(),
-                                  '---',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              Text(
-                                valueOrDefault<String>(
-                                  FFAppState().yaxis.first.toString(),
-                                  '---',
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
