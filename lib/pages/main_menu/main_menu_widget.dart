@@ -45,9 +45,6 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.currentRssi = widget!.deviceRssi;
       safeSetState(() {});
-      FFAppState().xaxis = [];
-      FFAppState().yaxis = [];
-      safeSetState(() {});
       _model.rssiUpdateTimer = InstantTimer.periodic(
         duration: Duration(milliseconds: 2000),
         callback: (timer) async {
@@ -75,8 +72,6 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
